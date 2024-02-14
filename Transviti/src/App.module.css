@@ -1,0 +1,143 @@
+
+.nav{
+  height: 10vh;
+  background: #ffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 15px #6B6B6B1A;
+  opacity: 1;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+.nav>h1{
+  font-size: 28;
+  font-weight: bold;
+  font-family: "Lato";
+  padding: 5px 30px;
+}
+.main {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 8px 140px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+.mainContain {
+  flex: 1;
+  background-color: #f3f3f3;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-size: 1.2rem;
+  color: #333;
+}
+.mainFirst{
+  background: white;
+  border-radius: 5px;
+  position: relative;
+}
+.innerdiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.innerdiv>img{
+  border-radius: 50%;
+}
+.mainContainitem{
+  background: linear-gradient(90deg, #57BC90, #004B40);
+  width: 300px;
+  margin-bottom: 10px;
+}
+.EditButton{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #F85F35;
+  border-radius: 5px;
+}
+.divmain{
+  display: flex;
+  width: 100%;
+}
+.divside{
+  width: 40%;
+}
+.leftdiv1{
+  background: #ffff 0% 0% no-repeat padding-box;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.icons{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.div1img{
+  display: flex;
+  gap: 10px;
+}
+.leftdiv2{
+  background: #ffff 0% 0% no-repeat padding-box;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.imgdivright{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.rightdiv{
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+.rightdiv1{
+  background: #ffff 0% 0% no-repeat padding-box;
+  display: flex;
+  justify-content: space-between;
+}
+.rightdiv1img{
+  border-radius: 50%;
+}
+.name{
+  height: 100vh;
+  width: 100%;
+  background-color: #015241;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container1{
+  height: 100%;
+  background-color: #f0f0f0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.card {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    text-align: center;
+    justify-content: center;
+  }
+  .horizantal{
+    display: none;
+  }
+}

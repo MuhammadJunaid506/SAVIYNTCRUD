@@ -1,0 +1,92 @@
+.card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    gap: 50px;
+  }
+  
+  .avatarContainer {
+    flex: 0 0 120px;
+  }
+  
+  .avatar {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20%; 
+  }
+  
+  .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  /* Card actions */
+  .cardActions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .updateButton,
+  .deleteButton {
+    /* flex: 1; */
+    padding:8px;
+    border: 1px solid #015249;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 100px;
+  }
+  .updateButton{
+    opacity: 0.7;
+    background-color: #39B54A;
+    color: #123e18;
+  }
+  .deleteButton{
+    opacity: 0.7;
+    background-color: #D80000;
+    color:#4a1313 ;
+  }
+  
+  @media (max-width: 767px) {
+    .card {
+      flex-direction: column; 
+    }
+  
+    .avatarContainer {
+      flex: 0 0 100%; 
+    }
+  
+    .cardHeader {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .updateButton,
+    .deleteButton {
+      flex-basis: 100%; 
+      margin: 5px 0; 
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      align-items: center;
+    }
+  }
