@@ -28,14 +28,13 @@
   
   h2 {
     font-size: 24px;
-    margin: 0;
+    margin-top: 20px;
   }
   
   p {
     margin: 5px 0;
   }
   
-  /* Card actions */
   .cardActions {
     display: flex;
     justify-content: space-between;

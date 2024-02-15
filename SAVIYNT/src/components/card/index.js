@@ -14,7 +14,7 @@ const Card = React.memo(({ item, onEdit, onDelete }) => {
       <p>{item.email}</p>
       
       <button onClick={onEdit} className={styles.updateButton}>Edit</button>
-      <button onClick={onDelete} className={styles.deleteButton}>Delete</button>
+      <button onClick={() => onDelete(item.id)} className={styles.deleteButton}>Delete</button>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-// itemSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import { saveListToLocalStorage } from './localStorageUtils';
 import { fetchItemsAsync } from './itemThunks';
@@ -32,16 +31,13 @@ const itemSlice = createSlice({
     sortItems: (state, action) => {
       const fieldToSortBy = action.payload;
 
-      // Sorting logic
       state.items.sort((a, b) => {
         const valueA = a[fieldToSortBy];
         const valueB = b[fieldToSortBy];
 
         if (typeof valueA === 'string' && typeof valueB === 'string') {
-          // If both values are strings, perform a case-insensitive comparison
           return valueA.localeCompare(valueB, undefined, { sensitivity: 'base' });
         } else {
-          // For other types, use a simple comparison
           return valueA - valueB;
         }
       });

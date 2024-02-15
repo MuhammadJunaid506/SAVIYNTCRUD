@@ -84,3 +84,26 @@ const Modal = ({ isOpen, closeModal, onSave, selectedItem ,text, heading, }) => 
 };
 
 export default React.memo(Modal);
+
+export const DeleteModal = React.memo(({ isOpen, closeModal, confirmDelete }) => {
+  return isOpen ? (
+    <div className={styles.modal} onClick={closeModal}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.deleteheader}>
+          <span className={styles.close} onClick={closeModal}>
+            &times;
+          </span>
+          <div>
+            <img src={Delete} alt="" height={50} width={50} />
+          </div>
+          <h2>ARE YOU SURE?</h2>
+          <p>Do you want to delete this item? This action cannot be undone.</p>
+          <div className={styles.buttonContainer}>
+            <button onClick={closeModal} className={styles.calModalButton}>Cancel</button>
+            <button onClick={confirmDelete} className={styles.delModalButton}>Delete</button>            
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : null;
+});

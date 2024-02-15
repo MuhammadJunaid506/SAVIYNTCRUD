@@ -11,9 +11,9 @@ import { fetchItemsAsync } from "./redux/itemThunks";
 import Card from "./components/card/index.js";
 import Model from "./components/customModal/index.js";
 import { Drawer } from "./components/drawer";
-import { FaSort , FaPlus } from "react-icons/fa";
+import { FaSort, FaPlus } from "react-icons/fa";
 import { RxDragHandleHorizontal } from "react-icons/rx";
-
+import { DeleteModal } from "./components/customModal/index";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -46,11 +46,17 @@ const App = () => {
 
   const handleDeleteItem = useCallback(
     (itemId) => {
-      dispatch(deleteItem(itemId));
-      setOpenModal(false);
+      setSelectedItem(itemId);
+      setIsModalOpen(true);
     },
-    [dispatch]
+    [setSelectedItem, setIsModalOpen]
   );
+
+  const confirmDelete = useCallback(() => {
+    dispatch(deleteItem(selectedItem));
+    setOpenModal(false);
+    setIsModalOpen(false);
+  }, [dispatch, selectedItem, setOpenModal, setIsModalOpen]);
 
   const handleSort = useCallback(
     (field) => {
@@ -58,10 +64,6 @@ const App = () => {
     },
     [dispatch]
   );
-
-  //   const openModal = useCallback(() => {
-  //   setIsModalOpen(true);
-  // }, []);
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
@@ -88,7 +90,7 @@ const App = () => {
         </div>
         <div className={styles.container1}>
           <nav className={styles.nav}>
-            <button className={styles.button} style={{width:"40px", marginLeft:"10px"}} onClick={toggleDrawer}><RxDragHandleHorizontal/></button>
+            <button className={styles.button} style={{ width: "40px", marginLeft: "10px" }} onClick={toggleDrawer}><RxDragHandleHorizontal /></button>
             <h1>CUSTOMERS</h1>
           </nav>
           <main className={styles.main}>
@@ -96,18 +98,18 @@ const App = () => {
               <button
                 className={styles.mainContainitem}
                 onClick={() => setOpenModal(true)}
-              >                
-                <FaPlus/>{"  "}ADD NEW CUSTOMER
-              </button>
+              >
+                <FaPlus />{"  "}ADD NEW CUSTOMER
+              </              button>
               <div className={styles.sortbuttons}>
-              <p onClick={() => handleSort("id")}>Sort by ID{"  "}<FaSort/></p>
-              <p onClick={() => handleSort("first_name")}>
-                Sort by First Name{"  "}<FaSort/>
-              </p>
-              <p onClick={() => handleSort("last_name")}>
-                Sort by Last Name{"  "}<FaSort/>
-              </p>
-              <p onClick={() => handleSort("email")}>Sort by Email{"  "}<FaSort/></p>
+                <p onClick={() => handleSort("id")}>Sort by ID{"  "}<FaSort /></p>
+                <p onClick={() => handleSort("first_name")}>
+                  Sort by First Name{"  "}<FaSort />
+                </p>
+                <p onClick={() => handleSort("last_name")}>
+                  Sort by Last Name{"  "}<FaSort />
+                </p>
+                <p onClick={() => handleSort("email")}>Sort by Email{"  "}<FaSort /></p>
               </div>
               {items.map((item) => (
                 <Card
@@ -130,6 +132,12 @@ const App = () => {
                 onSave={selectedItem ? handleUpdateItem : handleCreateItem}
                 selectedItem={selectedItem}
               />
+
+              <DeleteModal
+                isOpen={isModalOpen}
+                closeModal={closeModal}
+                confirmDelete={confirmDelete}
+              />
             </div>
           </main>
         </div>
@@ -139,3 +147,4 @@ const App = () => {
 };
 
 export default App;
+

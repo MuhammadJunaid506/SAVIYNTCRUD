@@ -1,4 +1,3 @@
-// localStorageUtils.js
 export const saveListToLocalStorage = (updatedList) => {
     try {
       localStorage.setItem('itemList', JSON.stringify(updatedList));
