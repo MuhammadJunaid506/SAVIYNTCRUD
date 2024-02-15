@@ -1,10 +1,9 @@
-// NewModal.js
 import React, { useState, useEffect, useCallback, useId } from 'react';
 import styles from "./modal.module.css"
 import { Delete, Mask } from '../../assets/images';
 
 
-const NewModal = ({ isOpen, closeModal, onSave, selectedItem ,text, heading, }) => {
+const Modal = ({ isOpen, closeModal, onSave, selectedItem ,text, heading, }) => {
   const [first_name, setFirst_name] = useState('');
   const [last_name, setLast_name] = useState('');
   const [email, setEmail] = useState('');
@@ -84,4 +83,4 @@ const NewModal = ({ isOpen, closeModal, onSave, selectedItem ,text, heading, }) 
   );
 };
 
-export default React.memo(NewModal);
+export default React.memo(Modal);
