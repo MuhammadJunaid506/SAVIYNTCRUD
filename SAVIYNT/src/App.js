@@ -9,7 +9,7 @@ import {
 } from "./redux/itemSlice";
 import { fetchItemsAsync } from "./redux/itemThunks";
 import Card from "./components/card/index.js";
-import Model from "./components/customModal/indes.js";
+import Model from "./components/customModal/index.js";
 import { Drawer } from "./components/drawer";
 import { FaSort , FaPlus } from "react-icons/fa";
 import { RxDragHandleHorizontal } from "react-icons/rx";
